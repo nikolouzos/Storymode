@@ -14,6 +14,7 @@
 		0ED8850C224D5667000D95D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8850A224D5667000D95D7 /* LaunchScreen.storyboard */; };
 		0ED88517224D5667000D95D7 /* StorymodeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED88516224D5667000D95D7 /* StorymodeAppTests.swift */; };
 		0ED88522224D5667000D95D7 /* StorymodeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED88521224D5667000D95D7 /* StorymodeAppUITests.swift */; };
+		0ED88537224D63F3000D95D7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0ED88536224D63F3000D95D7 /* .swiftlint.yml */; };
 		8825F2458DA0386265E7C031 /* Pods_StorymodeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F876088C1D4A941DA78724 /* Pods_StorymodeAppTests.framework */; };
 		8C87361E5AE0F52EE357A855 /* Pods_StorymodeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CFBC8CE1360990E139154B5 /* Pods_StorymodeAppUITests.framework */; };
 		A4409B6EABF76A6C94FB7C1C /* Pods_StorymodeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1CB000EFEA048F3E373ED7 /* Pods_StorymodeApp.framework */; };
@@ -50,6 +51,7 @@
 		0ED8851D224D5667000D95D7 /* StorymodeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StorymodeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ED88521224D5667000D95D7 /* StorymodeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorymodeAppUITests.swift; sourceTree = "<group>"; };
 		0ED88523224D5667000D95D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ED88536224D63F3000D95D7 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0F2FEBDEC1AA303497336706 /* Pods-StorymodeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorymodeAppTests.release.xcconfig"; path = "Target Support Files/Pods-StorymodeAppTests/Pods-StorymodeAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		10A343A26F63C403581E8FE8 /* Pods-StorymodeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorymodeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-StorymodeAppUITests/Pods-StorymodeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1C1CB000EFEA048F3E373ED7 /* Pods_StorymodeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StorymodeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +94,7 @@
 		0ED884F5224D5666000D95D7 = {
 			isa = PBXGroup;
 			children = (
+				0ED88536224D63F3000D95D7 /* .swiftlint.yml */,
 				0ED88500224D5666000D95D7 /* StorymodeApp */,
 				0ED88515224D5667000D95D7 /* StorymodeAppTests */,
 				0ED88520224D5667000D95D7 /* StorymodeAppUITests */,
@@ -306,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ED88537224D63F3000D95D7 /* .swiftlint.yml in Resources */,
 				0ED8850C224D5667000D95D7 /* LaunchScreen.storyboard in Resources */,
 				0ED88509224D5667000D95D7 /* Assets.xcassets in Resources */,
 				0ED88507224D5666000D95D7 /* Main.storyboard in Resources */,
@@ -366,7 +370,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nswiftlint autocorrect\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		B8CC552F03DF13B0C8428E46 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
