@@ -1,0 +1,6 @@
+framework module Pods_StorymodeApp {
+  umbrella header "Pods-StorymodeApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
