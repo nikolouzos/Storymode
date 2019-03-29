@@ -1,33 +1,24 @@
 PODS:
-  - Crashlytics (3.12.0):
-    - Fabric (~> 1.9.0)
-  - Fabric (1.9.0)
   - IBAnimatable (5.2.1)
   - KVNProgress (2.3.5)
   - SideMenu (5.0.3)
 
 DEPENDENCIES:
-  - Crashlytics (~> 3.12.0)
-  - Fabric (~> 1.9.0)
   - IBAnimatable
   - KVNProgress
   - SideMenu
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Crashlytics
-    - Fabric
     - IBAnimatable
     - KVNProgress
     - SideMenu
 
 SPEC CHECKSUMS:
-  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
-  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   IBAnimatable: a46b835ec6875178516cf7e014a40194d6bfa3fc
   KVNProgress: d7046cce142f1aeb740db39dc3cacfe910fac354
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
 
-PODFILE CHECKSUM: 78d0623e1f3e9174bf90cf1019afec87a03bacbb
+PODFILE CHECKSUM: ebe62cf2820bb2ee1b8fe29df732ec445424d305
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.0.beta.3

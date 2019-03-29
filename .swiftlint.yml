@@ -1,6 +1,5 @@
 disabled_rules:
   - vertical_parameter_alignment
 excluded:
-  - Pods
-
-reporter: "xcode"
+  - Pods/
+  - Pods/IBAnimatable
