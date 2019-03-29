@@ -15,6 +15,7 @@
 		0ED88522224D5667000D95D7 /* StorymodeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED88521224D5667000D95D7 /* StorymodeAppUITests.swift */; };
 		0ED88537224D63F3000D95D7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0ED88536224D63F3000D95D7 /* .swiftlint.yml */; };
 		0EFC96D9224EC8C8002F7DA5 /* Books.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC96D8224EC8C8002F7DA5 /* Books.storyboard */; };
+		0EFC96DE224ED41E002F7DA5 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC96DD224ED41E002F7DA5 /* BookCollectionViewCell.swift */; };
 		8825F2458DA0386265E7C031 /* Pods_StorymodeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F876088C1D4A941DA78724 /* Pods_StorymodeAppTests.framework */; };
 		8C87361E5AE0F52EE357A855 /* Pods_StorymodeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CFBC8CE1360990E139154B5 /* Pods_StorymodeAppUITests.framework */; };
 		A4409B6EABF76A6C94FB7C1C /* Pods_StorymodeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1CB000EFEA048F3E373ED7 /* Pods_StorymodeApp.framework */; };
@@ -52,6 +53,7 @@
 		0ED88523224D5667000D95D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ED88536224D63F3000D95D7 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0EFC96D8224EC8C8002F7DA5 /* Books.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Books.storyboard; sourceTree = "<group>"; };
+		0EFC96DD224ED41E002F7DA5 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		0F2FEBDEC1AA303497336706 /* Pods-StorymodeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorymodeAppTests.release.xcconfig"; path = "Target Support Files/Pods-StorymodeAppTests/Pods-StorymodeAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		10A343A26F63C403581E8FE8 /* Pods-StorymodeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorymodeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-StorymodeAppUITests/Pods-StorymodeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1C1CB000EFEA048F3E373ED7 /* Pods_StorymodeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StorymodeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,7 @@
 				0ED88501224D5666000D95D7 /* AppDelegate.swift */,
 				0ED88508224D5667000D95D7 /* Assets.xcassets */,
 				0ED8850D224D5667000D95D7 /* Info.plist */,
+				0EFC96DB224ED3EE002F7DA5 /* Views */,
 				0ED8852F224D56B8000D95D7 /* Controllers */,
 				0ED88530224D56BE000D95D7 /* Storyboards */,
 			);
@@ -159,6 +162,22 @@
 				0EFC96D8224EC8C8002F7DA5 /* Books.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		0EFC96DB224ED3EE002F7DA5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0EFC96DC224ED407002F7DA5 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0EFC96DC224ED407002F7DA5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0EFC96DD224ED41E002F7DA5 /* BookCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		45FFF55E564048D254F0D62D /* Frameworks */ = {
@@ -424,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EFC96DE224ED41E002F7DA5 /* BookCollectionViewCell.swift in Sources */,
 				0ED88504224D5666000D95D7 /* ViewController.swift in Sources */,
 				0ED88502224D5666000D95D7 /* AppDelegate.swift in Sources */,
 			);
