@@ -1,13 +1,15 @@
 platform :ios, '10.0'
 
+# Remove all pod related warnings
+inhibit_all_warnings!
+
 target 'StorymodeApp' do
   use_frameworks!
 
-  # Pods for StorymodeApp
-
-	# Crashlytics
-	# pod 'Fabric', '~> 1.9.0'
-	# pod 'Crashlytics', '~> 3.12.0'
+	# Crashlytics & Logging
+	 pod 'Fabric', '~> 1.9.0'
+	 pod 'Crashlytics', '~> 3.12.0'
+	 pod 'SwiftyBeaver'
 
 	# Views
 	pod 'SideMenu'
