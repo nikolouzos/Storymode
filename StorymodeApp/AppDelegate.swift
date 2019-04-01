@@ -7,16 +7,31 @@
 //
 
 import UIKit
+import SwiftyBeaver
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+	let log = SwiftyBeaver.self
 	var window: UIWindow?
 
 	func application
 		(_ application: UIApplication,
 		 didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+		// Log to Xcode Console
+		let console = ConsoleDestination()
+		log.addDestination(console)
+
+		// Log to the SwiftyBeaver app
+		if let filePath = Bundle.main.path(forResource: "SwiftyBeaver", ofType: "plist"),
+			let dict = NSDictionary(contentsOfFile: filePath) {
+			let platform = SBPlatformDestination(appID: dict["appID"] as? String ?? "",
+												 appSecret: dict["appSecret"] as? String ?? "",
+												 encryptionKey: dict["encryptionKey"] as? String ?? "")
+			log.addDestination(platform)
+		}
+		log.info("Added SwiftyBeaver logging!")
+
 		return true
 	}
 

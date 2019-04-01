@@ -1,9 +1,10 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/IBAnimatable" "${PODS_CONFIGURATION_BUILD_DIR}/KVNProgress" "${PODS_CONFIGURATION_BUILD_DIR}/SideMenu"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/IBAnimatable" "${PODS_CONFIGURATION_BUILD_DIR}/KVNProgress" "${PODS_CONFIGURATION_BUILD_DIR}/SideMenu" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyBeaver" "${PODS_ROOT}/Crashlytics/iOS" "${PODS_ROOT}/Fabric/iOS"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/IBAnimatable/IBAnimatable.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/KVNProgress/KVNProgress.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SideMenu/SideMenu.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/IBAnimatable/IBAnimatable.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/KVNProgress/KVNProgress.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SideMenu/SideMenu.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyBeaver/SwiftyBeaver.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "GLKit" -framework "IBAnimatable" -framework "KVNProgress" -framework "QuartzCore" -framework "SideMenu"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_CONFIGURATION_BUILD_DIR}/IBAnimatable/IBAnimatable.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/KVNProgress/KVNProgress.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/SideMenu/SideMenu.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyBeaver/SwiftyBeaver.framework/Headers" -iframework "${PODS_ROOT}/Crashlytics/iOS" -iframework "${PODS_ROOT}/Fabric/iOS" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/IBAnimatable" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/KVNProgress" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/SideMenu" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyBeaver"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"z" -framework "Crashlytics" -framework "Fabric" -framework "GLKit" -framework "IBAnimatable" -framework "KVNProgress" -framework "QuartzCore" -framework "Security" -framework "SideMenu" -framework "SwiftyBeaver" -framework "SystemConfiguration" -framework "UIKit"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
