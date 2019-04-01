@@ -51,4 +51,15 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
 		let finalSpacing = totalSpace / (cellCountInRow - 1 + 2)
 		return UIEdgeInsets(top: 0, left: finalSpacing, bottom: 0, right: finalSpacing)
 	}
+
+	// Handles the cell taps
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		// Create the cell
+		if let cell = collectionView.cellForItem(at: indexPath) as? BookCollectionViewCell {
+			// Do the tap animation
+			cell.doTapAnimation()
+
+			// TODO: Add the rest of the functionality
+		}
+	}
 }

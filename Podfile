@@ -6,6 +6,10 @@ inhibit_all_warnings!
 target 'StorymodeApp' do
   use_frameworks!
 
+	# Firebase
+	pod 'Firebase/Core'
+	pod 'Firebase/Firestore'
+
 	# Crashlytics & Logging
 	 pod 'Fabric', '~> 1.9.0'
 	 pod 'Crashlytics', '~> 3.12.0'

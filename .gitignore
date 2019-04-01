@@ -79,3 +79,6 @@ iOSInjectionProject/
 
 # SwiftyBeaver Credentials
 StorymodeApp/SwiftyBeaver.plist
+
+# Firebase File
+GoogleService-Info.plist

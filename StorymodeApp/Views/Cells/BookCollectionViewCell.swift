@@ -28,27 +28,26 @@ class BookCollectionViewCell: UICollectionViewCell {
 		// Update the views if the book is unlocked
 		self.bookIsLocked = bookIsLocked
 		if !bookIsLocked { bookIsUnlocked() }
-
-		// Add the action and selector for the
-		// TODO: Finish the tap for the cell
-		addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(onBookViewTap)))
-	}
-
-	// Handles the taps for the bookView
-	@objc func onBookViewTap() {
-		print("Tapped the bookView")
-
-		// Do the corresponding animation
-		doTapAnimation()
 	}
 
 	// Does an animation sequence upon clicking on the book
-	func doTapAnimation() {
+	func doTapAnimation(completion: ()? = nil) {
 		// If the book is locked, just shake the lock
 		if bookIsLocked {
-			lockImage.animate(.shake(repeatCount: 1))
+			bookView.animate(.shake(repeatCount: 1), duration: 0.35, damping: 0.8, velocity: 0.3, force: 0.5)
+				.completion({
+				log.debug("Finished the cell animation")
+
+				// Run the completion block
+				completion
+			})
 		} else {
-			// TODO: Add the animation for the unlocked book tap
+			bookView.animate(.flip(along: .y)).completion({
+				log.debug("Finished the cell animation")
+
+				// Run the completion block
+				completion
+			})
 		}
 	}
 

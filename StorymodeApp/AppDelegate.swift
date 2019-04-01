@@ -8,16 +8,19 @@
 
 import UIKit
 import SwiftyBeaver
+import Firebase
+
+let log = SwiftyBeaver.self
+let db = Firestore.firestore()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-	let log = SwiftyBeaver.self
 	var window: UIWindow?
 
 	func application
 		(_ application: UIApplication,
 		 didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+		// SwiftyBeaver configuration
 		// Log to Xcode Console
 		let console = ConsoleDestination()
 		log.addDestination(console)
@@ -31,6 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			log.addDestination(platform)
 		}
 		log.info("Added SwiftyBeaver logging!")
+
+		// Add Firebase
+		FirebaseApp.configure()
 
 		return true
 	}
