@@ -17,7 +17,7 @@ class BookCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var bookTitle: UILabel!
 	var bookIsLocked = true
 	
-	func setupBook(title: String, imagePath: String?, bookIsLocked: Bool) {
+	func setupBook(title: String?, imagePath: String?, bookIsLocked: Bool) {
 		// Set the bookTitle text
 		bookTitle.text = title
 

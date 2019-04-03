@@ -11,27 +11,50 @@ import UIKit
 class BookViewController: UIViewController {
 
 	@IBOutlet weak var collectionView: UICollectionView!
-	let totalCells = 3
+	var books: [Book]?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
+
+		// Set the booksDelegate
+		Firestore.shared.booksDelegate = self
+	}
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+
+		// Start observing for books
+		Firestore.shared.observeBooks()
+	}
+
+	override func viewDidDisappear(_ animated: Bool) {
+		// TODO: Change this when we create the next pages
+		// Remove the booksListener
+		log.info("Removed the booksListener")
+		Firestore.shared.booksListener?.remove()
 	}
 }
 
 // MARK: - Collection View Customization
 extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return totalCells
+		return books?.count ?? 0
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		if let cell = collectionView
 			.dequeueReusableCell(withReuseIdentifier: "bookCell", for: indexPath) as? BookCollectionViewCell {
-			if indexPath.row == 1 {
-				cell.setupBook(title: "UnlockedBook", imagePath: nil, bookIsLocked: false)
-			} else {
-				cell.setupBook(title: "LockedBook", imagePath: nil, bookIsLocked: true)
+			// Try to create the cell from the book data
+			if let book = books?[indexPath.row] {
+				// Set the state of the book
+				var bookIsLocked = true
+				// Unlock the book
+				if let startingPage = book.startingPage, startingPage != "" {
+					bookIsLocked = false
+				}
+
+				// Initialize the cell
+				cell.setupBook(title: book.title, imagePath: book.imageLink, bookIsLocked: bookIsLocked)
 			}
 
 			return cell
@@ -39,6 +62,7 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
 		return UICollectionViewCell()
 	}
 
+	// Use equal spacing for the cells on the screen
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
 						insetForSectionAt section: Int) -> UIEdgeInsets {
 		// MARK: - Default cell width
@@ -61,5 +85,15 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 			// TODO: Add the rest of the functionality
 		}
+	}
+}
+
+// MARK: - Books Delegate
+extension BookViewController: BooksDelegate {
+	func gotBooks(_ books: [Book]) {
+		self.books = books
+
+		// Reload the collectionView with the updates
+		collectionView.reloadData()
 	}
 }

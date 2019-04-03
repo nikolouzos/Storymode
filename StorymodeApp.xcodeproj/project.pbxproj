@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E2465AC2255227B00BD642F /* Firestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2465AB2255227B00BD642F /* Firestore.swift */; };
+		0E2465AF225529A900BD642F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2465AE225529A900BD642F /* Book.swift */; };
+		0E2465B122552A3200BD642F /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2465B022552A3200BD642F /* Price.swift */; };
 		0E2767912252835A00B304F4 /* SwiftyBeaver.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E2767902252835900B304F4 /* SwiftyBeaver.plist */; };
 		0E27679322529C0500B304F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E27679222529C0500B304F4 /* GoogleService-Info.plist */; };
 		0ED88502224D5666000D95D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED88501224D5666000D95D7 /* AppDelegate.swift */; };
@@ -41,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E2465AB2255227B00BD642F /* Firestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firestore.swift; sourceTree = "<group>"; };
+		0E2465AE225529A900BD642F /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		0E2465B022552A3200BD642F /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		0E2767902252835900B304F4 /* SwiftyBeaver.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SwiftyBeaver.plist; sourceTree = "<group>"; };
 		0E27679222529C0500B304F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0ED884FE224D5666000D95D7 /* StorymodeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StorymodeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +103,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E2465AA2255225B00BD642F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0E2465AD2255299D00BD642F /* Objects */,
+				0E2465AB2255227B00BD642F /* Firestore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0E2465AD2255299D00BD642F /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				0E2465AE225529A900BD642F /* Book.swift */,
+				0E2465B022552A3200BD642F /* Price.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
 		0ED884F5224D5666000D95D7 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +152,7 @@
 				0ED88501224D5666000D95D7 /* AppDelegate.swift */,
 				0ED88508224D5667000D95D7 /* Assets.xcassets */,
 				0ED8850D224D5667000D95D7 /* Info.plist */,
+				0E2465AA2255225B00BD642F /* Models */,
 				0EFC96DB224ED3EE002F7DA5 /* Views */,
 				0ED8852F224D56B8000D95D7 /* Controllers */,
 				0ED88530224D56BE000D95D7 /* Storyboards */,
@@ -451,9 +476,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2465AC2255227B00BD642F /* Firestore.swift in Sources */,
 				0EFC96DE224ED41E002F7DA5 /* BookCollectionViewCell.swift in Sources */,
 				0ED88504224D5666000D95D7 /* BookViewController.swift in Sources */,
 				0ED88502224D5666000D95D7 /* AppDelegate.swift in Sources */,
+				0E2465AF225529A900BD642F /* Book.swift in Sources */,
+				0E2465B122552A3200BD642F /* Price.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

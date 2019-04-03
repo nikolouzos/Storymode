@@ -11,7 +11,7 @@ import SwiftyBeaver
 import Firebase
 
 let log = SwiftyBeaver.self
-let db = Firestore.firestore()
+let firestore = FirebaseFirestore.Firestore.firestore()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
