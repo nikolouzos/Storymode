@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1914A2225A43CB00451446 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E1914A1225A43CB00451446 /* Main.storyboard */; };
+		0E1914A4225A44ED00451446 /* Signup : Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E1914A3225A44ED00451446 /* Signup : Login.storyboard */; };
+		0E1914A6225A46D500451446 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1914A5225A46D500451446 /* SignupViewController.swift */; };
 		0E2465AC2255227B00BD642F /* Firestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2465AB2255227B00BD642F /* Firestore.swift */; };
 		0E2465AF225529A900BD642F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2465AE225529A900BD642F /* Book.swift */; };
 		0E2465B122552A3200BD642F /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2465B022552A3200BD642F /* Price.swift */; };
+		0E2465B3225541A800BD642F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2465B2225541A800BD642F /* User.swift */; };
 		0E2767912252835A00B304F4 /* SwiftyBeaver.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E2767902252835900B304F4 /* SwiftyBeaver.plist */; };
 		0E27679322529C0500B304F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E27679222529C0500B304F4 /* GoogleService-Info.plist */; };
+		0E5F0C66225BD6C80041131E /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0E5F0C65225BD6C80041131E /* .travis.yml */; };
 		0ED88502224D5666000D95D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED88501224D5666000D95D7 /* AppDelegate.swift */; };
 		0ED88504224D5666000D95D7 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED88503224D5666000D95D7 /* BookViewController.swift */; };
 		0ED88509224D5667000D95D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ED88508224D5667000D95D7 /* Assets.xcassets */; };
@@ -44,11 +49,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E1914A1225A43CB00451446 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		0E1914A3225A44ED00451446 /* Signup : Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Signup : Login.storyboard"; sourceTree = "<group>"; };
+		0E1914A5225A46D500451446 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		0E2465AB2255227B00BD642F /* Firestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firestore.swift; sourceTree = "<group>"; };
 		0E2465AE225529A900BD642F /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		0E2465B022552A3200BD642F /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		0E2465B2225541A800BD642F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0E2767902252835900B304F4 /* SwiftyBeaver.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SwiftyBeaver.plist; sourceTree = "<group>"; };
 		0E27679222529C0500B304F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E5F0C65225BD6C80041131E /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		0ED884FE224D5666000D95D7 /* StorymodeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StorymodeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ED88501224D5666000D95D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0ED88503224D5666000D95D7 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +127,7 @@
 			children = (
 				0E2465AE225529A900BD642F /* Book.swift */,
 				0E2465B022552A3200BD642F /* Price.swift */,
+				0E2465B2225541A800BD642F /* User.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -124,6 +135,7 @@
 		0ED884F5224D5666000D95D7 = {
 			isa = PBXGroup;
 			children = (
+				0E5F0C65225BD6C80041131E /* .travis.yml */,
 				0ED88536224D63F3000D95D7 /* .swiftlint.yml */,
 				0ED88500224D5666000D95D7 /* StorymodeApp */,
 				0ED88515224D5667000D95D7 /* StorymodeAppTests */,
@@ -182,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				0ED88503224D5666000D95D7 /* BookViewController.swift */,
+				0E1914A5225A46D500451446 /* SignupViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -191,6 +204,8 @@
 			children = (
 				0ED8850A224D5667000D95D7 /* LaunchScreen.storyboard */,
 				0EFC96D8224EC8C8002F7DA5 /* Books.storyboard */,
+				0E1914A1225A43CB00451446 /* Main.storyboard */,
+				0E1914A3225A44ED00451446 /* Signup : Login.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -343,7 +358,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E1914A2225A43CB00451446 /* Main.storyboard in Resources */,
+				0E1914A4225A44ED00451446 /* Signup : Login.storyboard in Resources */,
 				0E2767912252835A00B304F4 /* SwiftyBeaver.plist in Resources */,
+				0E5F0C66225BD6C80041131E /* .travis.yml in Resources */,
 				0ED88537224D63F3000D95D7 /* .swiftlint.yml in Resources */,
 				0ED8850C224D5667000D95D7 /* LaunchScreen.storyboard in Resources */,
 				0ED88509224D5667000D95D7 /* Assets.xcassets in Resources */,
@@ -478,10 +496,12 @@
 			files = (
 				0E2465AC2255227B00BD642F /* Firestore.swift in Sources */,
 				0EFC96DE224ED41E002F7DA5 /* BookCollectionViewCell.swift in Sources */,
+				0E1914A6225A46D500451446 /* SignupViewController.swift in Sources */,
 				0ED88504224D5666000D95D7 /* BookViewController.swift in Sources */,
 				0ED88502224D5666000D95D7 /* AppDelegate.swift in Sources */,
 				0E2465AF225529A900BD642F /* Book.swift in Sources */,
 				0E2465B122552A3200BD642F /* Price.swift in Sources */,
+				0E2465B3225541A800BD642F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

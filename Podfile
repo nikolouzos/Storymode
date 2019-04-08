@@ -9,6 +9,7 @@ target 'StorymodeApp' do
 	# Firebase
 	pod 'Firebase/Core'
 	pod 'Firebase/Firestore'
+	pod 'Firebase/Auth'
 
 	# Crashlytics & Logging
 	 pod 'Fabric', '~> 1.9.0'
@@ -29,5 +30,14 @@ target 'StorymodeApp' do
     inherit! :search_paths
     # Pods for testing
   end
+
+	# Remove the -pie warnings
+	post_install do |installer|
+		installer.pods_project.targets.each do |target|
+			target.build_configurations.each do |config|
+				config.build_settings['LD_NO_PIE'] = 'NO'
+			end
+		end
+	end
 
 end

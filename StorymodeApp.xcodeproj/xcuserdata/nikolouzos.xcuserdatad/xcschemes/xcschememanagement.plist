@@ -3,11 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>SchemeUserState</key>
+	<dict/>
+	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>StorymodeApp.xcscheme_^#shared#^_</key>
+		<key>0ED884FD224D5666000D95D7</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>24</integer>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0ED88511224D5667000D95D7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0ED8851C224D5667000D95D7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p65-qW-7Xq">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ZiM-aw-cG8">
+            <objects>
+                <navigationController id="p65-qW-7Xq" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hgc-LT-pPy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Wa7-K2-Jqw" kind="relationship" relationship="rootViewController" id="62X-Es-IbD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="may-Ax-5eK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1842" y="-323"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RZe-yd-ubU">
+            <objects>
+                <viewController id="Wa7-K2-Jqw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IBv-c5-GMP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEd-V4-Tlh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="US4-ZQ-l6l">
+                                        <rect key="frame" x="153.5" y="209" width="107" height="30"/>
+                                        <state key="normal" title="Log In / Sign up"/>
+                                        <connections>
+                                            <segue destination="LiJ-fb-pem" kind="show" id="n8H-Zt-iU4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="US4-ZQ-l6l" firstAttribute="centerX" secondItem="PEd-V4-Tlh" secondAttribute="centerX" id="ZzI-8w-z2q"/>
+                                    <constraint firstItem="US4-ZQ-l6l" firstAttribute="centerY" secondItem="PEd-V4-Tlh" secondAttribute="centerY" id="dWq-Kd-Qz0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iq1-vb-EI7">
+                                <rect key="frame" x="0.0" y="448" width="414" height="448"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XrL-hq-7H9">
+                                        <rect key="frame" x="158" y="209" width="98" height="30"/>
+                                        <state key="normal" title="See the books"/>
+                                        <connections>
+                                            <segue destination="gV5-9V-UDU" kind="show" id="527-GJ-PQ4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="XrL-hq-7H9" firstAttribute="centerX" secondItem="iq1-vb-EI7" secondAttribute="centerX" id="83t-tD-Yiv"/>
+                                    <constraint firstItem="XrL-hq-7H9" firstAttribute="centerY" secondItem="iq1-vb-EI7" secondAttribute="centerY" id="fPw-Kx-Ohx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PEd-V4-Tlh" firstAttribute="top" secondItem="IBv-c5-GMP" secondAttribute="top" id="8th-Je-5iR"/>
+                            <constraint firstItem="PEd-V4-Tlh" firstAttribute="height" secondItem="IBv-c5-GMP" secondAttribute="height" multiplier="0.5" id="9oz-iw-4BC"/>
+                            <constraint firstItem="4J3-wW-LWK" firstAttribute="trailing" secondItem="iq1-vb-EI7" secondAttribute="trailing" id="Pdg-b3-gdg"/>
+                            <constraint firstItem="4J3-wW-LWK" firstAttribute="trailing" secondItem="PEd-V4-Tlh" secondAttribute="trailing" id="bZe-3U-aJZ"/>
+                            <constraint firstAttribute="bottom" secondItem="iq1-vb-EI7" secondAttribute="bottom" id="gNY-6A-Mh5"/>
+                            <constraint firstItem="iq1-vb-EI7" firstAttribute="height" secondItem="IBv-c5-GMP" secondAttribute="height" multiplier="0.5" id="gmy-e2-Qxc"/>
+                            <constraint firstItem="PEd-V4-Tlh" firstAttribute="leading" secondItem="4J3-wW-LWK" secondAttribute="leading" id="oAz-C3-fsa"/>
+                            <constraint firstItem="iq1-vb-EI7" firstAttribute="leading" secondItem="4J3-wW-LWK" secondAttribute="leading" id="s98-hi-uXX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4J3-wW-LWK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IBz-ol-DuL"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CjF-nf-D3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-974" y="-323"/>
+        </scene>
+        <!--Signup : Login-->
+        <scene sceneID="ChK-9r-vHC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Signup : Login" id="LiJ-fb-pem" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6A-uY-eRs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-387" y="-482"/>
+        </scene>
+        <!--Books-->
+        <scene sceneID="wXv-2C-RDk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Books" id="gV5-9V-UDU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ypV-kp-vjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-422" y="-165"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+</document>
