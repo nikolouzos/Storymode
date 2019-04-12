@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import IBAnimatable
 
 class SignupViewController: UIViewController {
 
-    override func viewDidLoad() {
+	@IBOutlet weak var phoneField: AnimatableTextField!
+	@IBOutlet weak var sendCodeButton: AnimatableButton!
+
+	override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
