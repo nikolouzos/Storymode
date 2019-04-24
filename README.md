@@ -1,4 +1,4 @@
-Storyboard App
+Storymode App
 =====================
 <center>
 <img src="https://img.shields.io/github/languages/top/nikolouzos/Storymode.svg" alt="Project Languages"/>
