@@ -1,4 +1,4 @@
-Storyboard App
+Storymode App
 =====================
 ![Project Languages](https://img.shields.io/github/languages/top/nikolouzos/Storymode.svg)
 [![Build Status](https://app.bitrise.io/app/5822a298e8bda550/status.svg?token=bzIcGUqOwhhSMdTFo8DwGw)](https://app.bitrise.io/app/5822a298e8bda550")
