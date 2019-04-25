@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="-1842" y="-323"/>
         </scene>
-        <!--View Controller-->
+        <!--Launch View Controller-->
         <scene sceneID="RZe-yd-ubU">
             <objects>
-                <viewController id="Wa7-K2-Jqw" sceneMemberID="viewController">
+                <viewController id="Wa7-K2-Jqw" customClass="LaunchViewController" customModule="StorymodeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IBv-c5-GMP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

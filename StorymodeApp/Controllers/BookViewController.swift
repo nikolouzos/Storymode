@@ -90,8 +90,8 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 // MARK: - Books Delegate
 extension BookViewController: BooksDelegate {
-	func gotBooks(_ books: [Book]) {
-		self.books = books
+	func gotBooks() {
+		self.books = AppObjects.objects.books
 
 		// Reload the collectionView with the updates
 		collectionView.reloadData()
