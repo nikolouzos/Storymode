@@ -13,7 +13,7 @@ class User {
 	var isPremium: Bool?
 	var ownedBooks: [String]?
 
-	init(from dict: [String: Any], with userID: String) {
+	init(from dict: [String: Any], withID userID: String) {
 		self.userID = userID
 		isPremium = dict["isPremium"] as? Bool
 		ownedBooks = dict["ownedBooks"] as? [String]

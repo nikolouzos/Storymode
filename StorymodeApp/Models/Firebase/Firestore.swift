@@ -14,19 +14,13 @@ protocol BooksDelegate: class {
 	func gotBooks()
 }
 
-protocol VerificationCodeDelegate: class {
-	func checkedVerificationCode(userID: String?)
-}
-
 class Firestore {
 	// Singleton
 	static let shared = Firestore()
+	static let user = FirestoreUser()
 
-	// MARK: - Books Observers
+	// MARK: - Books Listeners
 	var booksListener: ListenerRegistration?
-
-	// Verification Code delegate
-	weak var verificationCodeDelegate: VerificationCodeDelegate?
 
 	// Delegate for the books
 	weak var booksDelegate: BooksDelegate?
@@ -57,29 +51,20 @@ class Firestore {
 		}
 	}
 
-	/// Creates a user with the specified userID and bookIDs
-	func createUser(with userID: String, and ownedBookIDs: [String]) {
-		// Add the user to the database
-		firestore.collection("users")
-			.document(userID).setData([
-				"id": userID,
-				"isPremium": false,
-				"ownedBooks": ownedBookIDs
-			]) { error in
-				if let error = error {
-					log.error("""
-						We encountered an error while adding the user in the database
-						\n Error: \(error.localizedDescription)
-						""")
-				} else {
-					log.info("Added the user to the database")
+	/// Removes all the listeners persistent listeners that have been created
+	/// This function is normally called only when the application enters the background
+	// Persistent in this context means listeners that have been created at or close
+	// to the start of the application and have not been removed since. Thus listeners
+	// that are used throughout the lifecycle of the application e.g. UserListener
+	func removePersistentListeners() {
+		Firestore.user.userListener?.remove()
+	}
 
-					// Call the delegate for the user sign in
-					self.verificationCodeDelegate?.checkedVerificationCode(userID: userID)
-				}
-
-				// Call the delegate for the user sign in
-				self.verificationCodeDelegate?.checkedVerificationCode(userID: nil)
+	/// Restarts all the persistent listeners
+	/// This function is normally called only when the application enters the foreground
+	func restartPersistentListeners() {
+		if let userID = Auth.auth().currentUser?.uid {
+			Firestore.user.observeUser(withID: userID)
 		}
 	}
 }

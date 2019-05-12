@@ -19,9 +19,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-		// Handle the background taps
-//		view.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
-
 		// Add the delegates for the UITextFields
 		pinField.delegate = self
 
@@ -98,6 +95,10 @@ extension SignupViewController {
 
 		// If the newLegth is 6, call the FirebaseAuth.checkCode()
 		if newLength == 6, let prevPin = pinField.text {
+			// Add the delegate for the verification code check
+			FirebaseAuth.auth.verificationCodeDelegate = self
+
+			// Check the verification code and add a user to the database
 			FirebaseAuth.auth.checkVerificationCode(prevPin + string)
 		}
 
@@ -119,13 +120,48 @@ extension SignupViewController: PhoneAuthDelegate {
 	}
 }
 
-// MARK: - VerificationCodeDelegate
+// MARK: - UserDelegate
 extension SignupViewController: VerificationCodeDelegate {
-	func checkedVerificationCode(userID: String?) {
-		if userID != nil {
-			dismiss(animated: true)
-		} else {
+	func verifiedCodeWith(_ userID: String?) {
+		if let userID = userID {
+			// User Delegate
+			Firestore.user.userDelegate = self
 
+			// If the user is not being observed, start observing them
+			if Firestore.user.userListener == nil {
+				Firestore.user.observeUser(withID: userID)
+			}
+		} else {
+			// Go back to the main screen
+			navigationController?.popViewController(animated: true)
+		}
+	}
+}
+
+// MARK: - UserCreationDelegate
+extension SignupViewController: UserCreationDelegate {
+	func createdUserWithID(_ userID: String?) {
+	}
+}
+
+// MARK: - UserDelegate
+extension SignupViewController: UserDelegate {
+	func observedUser(user: User?) {
+		if user != nil {
+			navigationController?.popViewController(animated: true)
+		} else {
+			// TODO: Make this better
+			// Create the books we need to send to user to create their profile
+			let freeBooks = AppObjects.objects.books.filter({ $0.price?.finalPrice == "0" })
+			var freeBookIDs = [String]()
+			for book in freeBooks {
+				freeBookIDs.append(book.id ?? "")
+			}
+
+			if let userID = AppObjects.objects.user?.userID {
+				Firestore.user.userCreationDelegate = self
+				Firestore.user.createUser(with: userID, and: freeBookIDs)
+			}
 		}
 	}
 }

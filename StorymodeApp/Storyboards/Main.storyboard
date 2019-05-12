@@ -68,12 +68,20 @@
                                     <constraint firstItem="XrL-hq-7H9" firstAttribute="centerY" secondItem="iq1-vb-EI7" secondAttribute="centerY" id="fPw-Kx-Ohx"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back, User!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ut1-Ik-QkL">
+                                <rect key="frame" x="126" y="60" width="162.5" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PEd-V4-Tlh" firstAttribute="top" secondItem="IBv-c5-GMP" secondAttribute="top" id="8th-Je-5iR"/>
                             <constraint firstItem="PEd-V4-Tlh" firstAttribute="height" secondItem="IBv-c5-GMP" secondAttribute="height" multiplier="0.5" id="9oz-iw-4BC"/>
                             <constraint firstItem="4J3-wW-LWK" firstAttribute="trailing" secondItem="iq1-vb-EI7" secondAttribute="trailing" id="Pdg-b3-gdg"/>
+                            <constraint firstItem="ut1-Ik-QkL" firstAttribute="centerX" secondItem="IBv-c5-GMP" secondAttribute="centerX" id="PwK-ly-jMy"/>
+                            <constraint firstItem="ut1-Ik-QkL" firstAttribute="top" secondItem="4J3-wW-LWK" secondAttribute="top" constant="16" id="aJd-8L-vdb"/>
                             <constraint firstItem="4J3-wW-LWK" firstAttribute="trailing" secondItem="PEd-V4-Tlh" secondAttribute="trailing" id="bZe-3U-aJZ"/>
                             <constraint firstAttribute="bottom" secondItem="iq1-vb-EI7" secondAttribute="bottom" id="gNY-6A-Mh5"/>
                             <constraint firstItem="iq1-vb-EI7" firstAttribute="height" secondItem="IBv-c5-GMP" secondAttribute="height" multiplier="0.5" id="gmy-e2-Qxc"/>
@@ -84,6 +92,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="IBz-ol-DuL"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="userLabel" destination="ut1-Ik-QkL" id="Mvk-ys-jHj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CjF-nf-D3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

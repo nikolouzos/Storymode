@@ -13,6 +13,10 @@ protocol PhoneAuthDelegate: class {
 	func verifiedPhone(withError error: Error?)
 }
 
+protocol VerificationCodeDelegate: class {
+	func verifiedCodeWith(_ userID: String?)
+}
+
 class FirebaseAuth {
 	// Singleton
 	static var auth = FirebaseAuth()
@@ -30,9 +34,6 @@ class FirebaseAuth {
 				if let verificationID = verificationID {
 					// Store the verificationID in the AppObjects
 					AppObjects.objects.verificationID = verificationID
-
-					// Store the verificationID in the UserDefaults
-					Storage.storeVerificationID()
 				}
 			}
 
@@ -40,6 +41,9 @@ class FirebaseAuth {
 			self.phoneAuthDelegate?.verifiedPhone(withError: error)
 		}
 	}
+
+	// MARK: - Verification Code Delegate
+	weak var verificationCodeDelegate: VerificationCodeDelegate?
 
 	/// Checks the verification code that was provided by the user.
 	/// If the code is  valid, it returns the userID
@@ -54,20 +58,13 @@ class FirebaseAuth {
 				if let error = error {
 					log.error("Got an error while signing in the user: \(error.localizedDescription)")
 
-					// Call the delegate for the user sign in
-					Firestore.shared.verificationCodeDelegate?.checkedVerificationCode(userID: nil)
+					// Call the delegate for the code verification
+					FirebaseAuth.auth.verificationCodeDelegate?.verifiedCodeWith(nil)
 				} else if let user = result?.user {
-					log.info("Authenticated the user, will now add a user in the database")
+					log.info("Verified the verification code, will now check if the user extists or add the user to the database")
 
-					// Create the books we need to send to user to create their profile
-					let freeBooks = AppObjects.objects.books.filter({ $0.price?.finalPrice == "0" })
-					var freeBookIDs = [String]()
-					for book in freeBooks {
-						freeBookIDs.append(book.id ?? "")
-					}
-
-					// Add the user to the database
-					Firestore.shared.createUser(with: user.uid, and: freeBookIDs)
+					// Call the delegate for the code verification
+					FirebaseAuth.auth.verificationCodeDelegate?.verifiedCodeWith(user.uid)
 				}
 			}
 		} else {
