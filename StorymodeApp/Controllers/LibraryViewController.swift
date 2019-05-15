@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LibraryViewController.swift
 //  StorymodeApp
 //
 //  Created by Nikolaos Rafail Nikolouzos on 28/03/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BookViewController: UIViewController {
+class LibraryViewController: UIViewController {
 
 	@IBOutlet weak var collectionView: UICollectionView!
 	var books: [Book]?
@@ -36,7 +36,8 @@ class BookViewController: UIViewController {
 }
 
 // MARK: - Collection View Customization
-extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension LibraryViewController: UICollectionViewDelegate,
+UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return books?.count ?? 0
 	}
@@ -89,7 +90,7 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 // MARK: - Books Delegate
-extension BookViewController: BooksDelegate {
+extension LibraryViewController: BooksDelegate {
 	func gotBooks() {
 		self.books = AppObjects.objects.books
 

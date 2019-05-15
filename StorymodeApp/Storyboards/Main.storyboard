@@ -41,7 +41,7 @@
                                         <rect key="frame" x="153.5" y="209" width="107" height="30"/>
                                         <state key="normal" title="Log In / Sign up"/>
                                         <connections>
-                                            <segue destination="LiJ-fb-pem" kind="show" id="n8H-Zt-iU4"/>
+                                            <segue destination="LiJ-fb-pem" kind="show" identifier="authenticateSegue" id="n8H-Zt-iU4"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -58,7 +58,7 @@
                                         <rect key="frame" x="158" y="209" width="98" height="30"/>
                                         <state key="normal" title="See the books"/>
                                         <connections>
-                                            <segue destination="gV5-9V-UDU" kind="show" id="527-GJ-PQ4"/>
+                                            <segue destination="gV5-9V-UDU" kind="show" identifier="librarySegue" id="527-GJ-PQ4"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -68,20 +68,12 @@
                                     <constraint firstItem="XrL-hq-7H9" firstAttribute="centerY" secondItem="iq1-vb-EI7" secondAttribute="centerY" id="fPw-Kx-Ohx"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back, User!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ut1-Ik-QkL">
-                                <rect key="frame" x="126" y="60" width="162.5" height="21"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PEd-V4-Tlh" firstAttribute="top" secondItem="IBv-c5-GMP" secondAttribute="top" id="8th-Je-5iR"/>
                             <constraint firstItem="PEd-V4-Tlh" firstAttribute="height" secondItem="IBv-c5-GMP" secondAttribute="height" multiplier="0.5" id="9oz-iw-4BC"/>
                             <constraint firstItem="4J3-wW-LWK" firstAttribute="trailing" secondItem="iq1-vb-EI7" secondAttribute="trailing" id="Pdg-b3-gdg"/>
-                            <constraint firstItem="ut1-Ik-QkL" firstAttribute="centerX" secondItem="IBv-c5-GMP" secondAttribute="centerX" id="PwK-ly-jMy"/>
-                            <constraint firstItem="ut1-Ik-QkL" firstAttribute="top" secondItem="4J3-wW-LWK" secondAttribute="top" constant="16" id="aJd-8L-vdb"/>
                             <constraint firstItem="4J3-wW-LWK" firstAttribute="trailing" secondItem="PEd-V4-Tlh" secondAttribute="trailing" id="bZe-3U-aJZ"/>
                             <constraint firstAttribute="bottom" secondItem="iq1-vb-EI7" secondAttribute="bottom" id="gNY-6A-Mh5"/>
                             <constraint firstItem="iq1-vb-EI7" firstAttribute="height" secondItem="IBv-c5-GMP" secondAttribute="height" multiplier="0.5" id="gmy-e2-Qxc"/>
@@ -93,28 +85,28 @@
                     <navigationItem key="navigationItem" id="IBz-ol-DuL"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="userLabel" destination="ut1-Ik-QkL" id="Mvk-ys-jHj"/>
+                        <outlet property="authButton" destination="US4-ZQ-l6l" id="De6-4A-MeV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CjF-nf-D3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-974" y="-323"/>
         </scene>
-        <!--Signup : Login-->
+        <!--Authenticate-->
         <scene sceneID="ChK-9r-vHC">
             <objects>
-                <viewControllerPlaceholder storyboardName="Signup : Login" id="LiJ-fb-pem" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Authenticate" id="LiJ-fb-pem" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6A-uY-eRs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-387" y="-482"/>
         </scene>
-        <!--Books-->
+        <!--LibraryAndBooks-->
         <scene sceneID="wXv-2C-RDk">
             <objects>
-                <viewControllerPlaceholder storyboardName="Books" id="gV5-9V-UDU" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="LibraryAndBooks" id="gV5-9V-UDU" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ypV-kp-vjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-422" y="-165"/>
+            <point key="canvasLocation" x="-388" y="-169"/>
         </scene>
     </scenes>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>

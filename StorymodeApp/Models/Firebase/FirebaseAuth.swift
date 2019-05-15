@@ -54,7 +54,7 @@ class FirebaseAuth {
 				withVerificationID: verificationID, verificationCode: code)
 
 			// Sign in the user
-			Auth.auth().signInAndRetrieveData(with: credential) { (result, error) in
+			Auth.auth().signIn(with: credential) { (result, error) in
 				if let error = error {
 					log.error("Got an error while signing in the user: \(error.localizedDescription)")
 

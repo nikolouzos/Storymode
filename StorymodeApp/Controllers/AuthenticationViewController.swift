@@ -1,5 +1,5 @@
 //
-//  SignupViewController.swift
+//  AuthenticationViewController.swift
 //  StorymodeApp
 //
 //  Created by Nikolaos Rafail Nikolouzos on 07/04/2019.
@@ -9,7 +9,7 @@
 import UIKit
 import IBAnimatable
 
-class SignupViewController: UIViewController, UITextFieldDelegate {
+class AuthenticationViewController: UIViewController, UITextFieldDelegate {
 
 	@IBOutlet weak var phoneField: AnimatableTextField!
 	@IBOutlet weak var sendCodeButton: AnimatableButton!
@@ -70,7 +70,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
 }
 
 // MARK: - PinField selector
-extension SignupViewController {
+extension AuthenticationViewController {
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
 				   replacementString string: String) -> Bool {
 		if textField == pinField {
@@ -107,7 +107,7 @@ extension SignupViewController {
 }
 
 // MARK: - PhoneAuthDelegate
-extension SignupViewController: PhoneAuthDelegate {
+extension AuthenticationViewController: PhoneAuthDelegate {
 	func verifiedPhone(withError error: Error?) {
 		if let error = error {
 			log.error("We got a phone authentication error: \(error.localizedDescription)")
@@ -121,7 +121,7 @@ extension SignupViewController: PhoneAuthDelegate {
 }
 
 // MARK: - UserDelegate
-extension SignupViewController: VerificationCodeDelegate {
+extension AuthenticationViewController: VerificationCodeDelegate {
 	func verifiedCodeWith(_ userID: String?) {
 		if let userID = userID {
 			// User Delegate
@@ -139,13 +139,13 @@ extension SignupViewController: VerificationCodeDelegate {
 }
 
 // MARK: - UserCreationDelegate
-extension SignupViewController: UserCreationDelegate {
+extension AuthenticationViewController: UserCreationDelegate {
 	func createdUserWithID(_ userID: String?) {
 	}
 }
 
 // MARK: - UserDelegate
-extension SignupViewController: UserDelegate {
+extension AuthenticationViewController: UserDelegate {
 	func observedUser(user: User?) {
 		if user != nil {
 			navigationController?.popViewController(animated: true)
